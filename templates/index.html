@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Background Remover</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page-wrapper">
+    <div class="container">
+      <!-- Left Panel -->
+      <div class="left-panel">
+        <h1><span>AI</span> Background Remover</h1>
+        <p>Effortlessly remove image backgrounds using AI. Upload or drag & drop an image, and download your result in seconds.</p>
+      </div>
+
+      <!-- Right Panel -->
+      <div class="right-panel">
+        <div id="drop-zone">
+          <p>📤 Drag & Drop or Click to Upload</p>
+          <input type="file" id="file-input" accept="image/*">
+        </div>
+
+        <div class="progress-container">
+          <div id="upload-progress" class="progress-bar hidden">
+            <br>
+            Uploading...</div>
+          <div id="process-progress" class="progress-bar hidden">Processing...</div>
+        </div>
+
+        <div id="result">
+          <img id="output-image" src="" alt="Processed Image">
+          <a id="download-btn" href="#" download="output.png">⬇️ Download Image</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by Amritesh Das • <a href="https://github.com/amriteshd" target="_blank">GitHub</a></p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
