@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, send_file
 from rembg import remove
 from PIL import Image
 import io
+import os  # ✅ Needed for dynamic port access
 
 app = Flask(__name__)
 
@@ -25,4 +26,5 @@ def remove_bg():
     return send_file(img_io, mimetype='image/png', as_attachment=True, download_name='output.png')
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get('PORT', 5000))  # ✅ Use PORT from Render
+    app.run(host='0.0.0.0', port=port)
